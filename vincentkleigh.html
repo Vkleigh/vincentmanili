@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vincent Kleigh Manili — Digital Marketing & Web Developer</title>
+<meta name="description" content="I build the systems that turn clicks into clients. Google Ads, GoHighLevel automations, funnels, and custom-coded websites — all from one operator." />
+<meta property="og:title" content="Vincent Kleigh Manili — Marketing & Code that Converts" />
+<meta property="og:description" content="Five years of building lead-gen systems that move metrics. Funnels, ads, automation, and code under one roof." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+
+<style>
+
+:root {
+  --bg:        #0d0d0b;
+  --bg-elev:  #15140f;
+  --bg-card:  #1a1814;
+  --line:     #2a2823;
+  --line-2:   #3a372f;
+  --fg:       #f4ede0;
+  --fg-2:    #d8d0c0;
+  --fg-mute: #8e887b;
+  --accent:   #d8ff3a;     
+  --accent-2: #ff5a2c;     
+  --accent-3: #6e8eff;     
+
+  --display: "Fraunces", "Times New Roman", serif;
+  --body: "Instrument Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+
+  --radius: 4px;
+  --maxw: 1440px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--body);
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+::selection { background: var(--accent); color: var(--bg); }
+
+body::before {
+  content: "";
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.45 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 1000;
+  mix-blend-mode: overlay;
+}
+
+.nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 18px 36px;
+  display: flex; align-items: center; justify-content: space-between;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(13, 13, 11, 0.55);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s ease, background .3s ease;
+}
+.nav.scrolled {
+  border-bottom-color: var(--line);
+  background: rgba(13, 13, 11, 0.85);
+}
+.nav__logo {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  font-style: italic;
+  display: flex; align-items: center; gap: 10px;
+}
+.nav__logo .dot {
+  width: 8px; height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+.nav__links {
+  display: flex; gap: 36px;
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.nav__links a {
+  position: relative;
+  padding: 6px 0;
+  color: var(--fg-2);
+  transition: color .25s ease;
+}
+.nav__links a::after {
+  content: "";
+  position: absolute; left: 0; bottom: 0;
+  width: 0; height: 1px;
+  background: var(--accent);
+  transition: width .3s cubic-bezier(.7,0,.3,1);
+}
+.nav__links a:hover { color: var(--fg); }
+.nav__links a:hover::after { width: 100%; }
+
+.nav__cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 10px 18px;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 100px;
+  font-weight: 700;
+  transition: transform .2s ease, background .25s ease;
+}
+.nav__cta:hover { transform: translateY(-1px); background: #e6ff5a; }
+
+@media (max-width: 880px) {
+  .nav { padding: 14px 20px; }
+  .nav__links { display: none; }
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 140px 36px 60px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  overflow: hidden;
+}
+.hero__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  width: 100%;
+}
+.hero__kicker {
+  display: flex; align-items: center; gap: 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-mute);
+  margin-bottom: 60px;
+}
+.hero__kicker .line {
+  width: 60px; height: 1px;
+  background: var(--fg-mute);
+}
+.hero__kicker .available {
+  color: var(--accent);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.hero__kicker .available::before {
+  content: "";
+  width: 7px; height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--accent);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+.hero__title {
+  font-family: var(--display);
+  font-weight: 350;
+  font-size: clamp(48px, 9vw, 168px);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+}
+.hero__title .line-1 { display: block; }
+.hero__title .line-2 {
+  display: block;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--fg-2);
+  padding-left: 8vw;
+}
+.hero__title .line-3 {
+  display: block;
+  font-weight: 600;
+}
+.hero__title .line-3 .accent {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+  position: relative;
+}
+.hero__title .line-3 .accent::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0.05em;
+  height: 4px;
+  background: var(--accent);
+  opacity: 0.3;
+}
+
+.hero__bottom {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+  padding-top: 80px;
+}
+.hero__sub {
+  font-family: var(--display);
+  font-size: clamp(18px, 1.4vw, 22px);
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--fg-2);
+  max-width: 540px;
+}
+.hero__sub em {
+  font-style: italic;
+  color: var(--fg);
+  background: linear-gradient(180deg, transparent 65%, rgba(216, 255, 58, 0.25) 65%);
+}
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 18px 28px;
+  background: var(--fg);
+  color: var(--bg);
+  border-radius: 100px;
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  transition: transform .25s ease, background .25s ease;
+}
+.btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
+.btn-primary svg { transition: transform .25s ease; }
+.btn-primary:hover svg { transform: translate(2px, -2px); }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 18px 28px;
+  border: 1px solid var(--line-2);
+  border-radius: 100px;
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--fg);
+  font-weight: 500;
+  transition: border-color .25s ease, color .25s ease;
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+@media (max-width: 880px) {
+  .hero { padding: 100px 20px 40px; min-height: auto; }
+  .hero__kicker { margin-bottom: 36px; flex-wrap: wrap; }
+  .hero__kicker .line { width: 40px; }
+  .hero__title .line-2 { padding-left: 0; }
+  .hero__bottom { grid-template-columns: 1fr; gap: 36px; padding-top: 50px; }
+  .hero__actions { justify-content: flex-start; }
+}
+
+.marquee {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 28px 0;
+  overflow: hidden;
+  background: var(--bg-elev);
+  position: relative;
+}
+.marquee__track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+  white-space: nowrap;
+  width: max-content;
+}
+.marquee__item {
+  display: inline-flex; align-items: center; gap: 36px;
+  padding: 0 36px;
+  font-family: var(--display);
+  font-size: clamp(28px, 4vw, 56px);
+  font-weight: 350;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  color: var(--fg-2);
+}
+.marquee__item .star {
+  display: inline-block;
+  width: 24px; height: 24px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.section {
+  padding: 140px 36px;
+  position: relative;
+}
+.section__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  width: 100%;
+}
+.section__label {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-mute);
+  margin-bottom: 28px;
+}
+.section__label .num {
+  color: var(--accent);
+  font-weight: 700;
+}
+.section__label::before {
+  content: "";
+  width: 28px; height: 1px;
+  background: var(--fg-mute);
+}
+.section__title {
+  font-family: var(--display);
+  font-weight: 350;
+  font-size: clamp(40px, 6vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  font-variation-settings: "opsz" 144;
+  margin-bottom: 64px;
+}
+.section__title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--fg-2);
+}
+@media (max-width: 880px) {
+  .section { padding: 90px 20px; }
+  .section__title { margin-bottom: 40px; }
+}
+
+.about {
+  border-top: 1px solid var(--line);
+}
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.about__lead {
+  font-family: var(--display);
+  font-size: clamp(28px, 3.4vw, 48px);
+  line-height: 1.15;
+  font-weight: 350;
+  letter-spacing: -0.02em;
+}
+.about__lead em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 400;
+}
+.about__body {
+  display: flex; flex-direction: column; gap: 24px;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--fg-2);
+  max-width: 520px;
+}
+.about__body p strong { color: var(--fg); font-weight: 600; }
+
+.about__stats {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.stat {
+  padding: 36px 24px;
+  border-right: 1px solid var(--line);
+}
+.stat:last-child { border-right: none; }
+.stat__num {
+  font-family: var(--display);
+  font-size: clamp(40px, 5vw, 72px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+.stat__num .plus { color: var(--accent); }
+.stat__label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-mute);
+}
+@media (max-width: 880px) {
+  .about__grid { grid-template-columns: 1fr; gap: 40px; }
+  .about__stats { grid-template-columns: repeat(2, 1fr); margin-top: 50px; }
+  .stat { padding: 24px 16px; border-bottom: 1px solid var(--line); }
+  .stat:nth-child(2) { border-right: none; }
+  .stat:nth-child(3), .stat:nth-child(4) { border-bottom: none; }
+}
+
+.services {
+  border-top: 1px solid var(--line);
+  background: var(--bg-elev);
+}
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.service {
+  padding: 50px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  transition: background .35s ease;
+  cursor: default;
+}
+.service:nth-child(2n) { border-right: none; }
+.service:nth-child(n+3) { border-bottom: none; }
+.service:hover {
+  background: var(--bg-card);
+}
+.service::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--accent);
+  transition: width .5s cubic-bezier(.7,0,.3,1);
+}
+.service:hover::before { width: 100%; }
+
+.service__num {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--fg-mute);
+  margin-bottom: 32px;
+}
+.service__title {
+  font-family: var(--display);
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+.service__title em { font-style: italic; color: var(--accent); }
+.service__desc {
+  color: var(--fg-2);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 28px;
+  max-width: 400px;
+}
+.service__list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.service__list li {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 7px 12px;
+  border: 1px solid var(--line-2);
+  border-radius: 100px;
+  color: var(--fg-2);
+  transition: color .2s ease, border-color .2s ease;
+}
+.service:hover .service__list li { color: var(--fg); border-color: var(--fg-mute); }
+
+@media (max-width: 880px) {
+  .services__grid { grid-template-columns: 1fr; }
+  .service { padding: 36px 24px; border-right: none; }
+  .service:not(:last-child) { border-bottom: 1px solid var(--line); }
+  .service:nth-child(n+3) { border-bottom: 1px solid var(--line); }
+  .service:last-child { border-bottom: none; }
+}
+
+.work {
+  border-top: 1px solid var(--line);
+}
+.work__filters {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 56px;
+}
+.filter {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  border: 1px solid var(--line-2);
+  border-radius: 100px;
+  color: var(--fg-2);
+  transition: all .2s ease;
+}
+.filter:hover { color: var(--fg); border-color: var(--fg-mute); }
+.filter.active {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+.project {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-card);
+  transition: transform .4s cubic-bezier(.2,0,.2,1), opacity .4s ease;
+  display: block;
+}
+.project.hidden {
+  display: none;
+}
+.project--lg { grid-column: span 7; }
+.project--md { grid-column: span 5; }
+.project--sm { grid-column: span 4; }
+.project--full { grid-column: span 12; }
+
+.project__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--bg-elev) 0%, var(--bg-card) 100%);
+}
+.project__fallback {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 40px;
+  font-family: var(--display);
+  font-size: clamp(28px, 3.4vw, 48px);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  line-height: 1.05;
+  z-index: 1;
+  background-image:
+    radial-gradient(at 30% 20%, rgba(216, 255, 58, 0.08) 0%, transparent 40%),
+    radial-gradient(at 70% 80%, rgba(255, 90, 44, 0.08) 0%, transparent 40%);
+  transition: transform .8s cubic-bezier(.2,0,.2,1), background-image .4s ease;
+}
+.project__fallback em {
+  color: var(--accent);
+  font-weight: 350;
+}
+.project:hover .project__fallback {
+  transform: scale(1.04);
+}
+.project__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(13, 13, 11, 0) 50%, rgba(13, 13, 11, 0.85) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.project__meta {
+  position: absolute;
+  top: 20px; left: 20px;
+  display: flex; gap: 8px;
+  z-index: 3;
+}
+.project__tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  background: rgba(13, 13, 11, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 100px;
+  color: var(--fg);
+}
+.project__tag--accent {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+.project__info {
+  padding: 24px 28px 28px;
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 20px;
+}
+.project__title {
+  font-family: var(--display);
+  font-size: clamp(20px, 2.2vw, 30px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.project__url {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--fg-mute);
+  letter-spacing: 0.04em;
+}
+.project__arrow {
+  width: 44px; height: 44px;
+  border: 1px solid var(--line-2);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .25s ease;
+  flex-shrink: 0;
+}
+.project:hover .project__arrow {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 1100px) {
+  .project--lg, .project--md, .project--sm { grid-column: span 6; }
+  .project--full { grid-column: span 12; }
+}
+@media (max-width: 720px) {
+  .projects { gap: 16px; }
+  .project--lg, .project--md, .project--sm, .project--full { grid-column: span 12; }
+  .project__info { padding: 18px 20px 22px; }
+}
+
+.process {
+  border-top: 1px solid var(--line);
+  background: var(--bg-elev);
+  position: relative;
+}
+.process__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.step {
+  padding: 40px 32px 36px;
+  border-right: 1px solid var(--line);
+  position: relative;
+  transition: background .25s ease;
+}
+.step:last-child { border-right: none; }
+.step:hover { background: var(--bg-card); }
+
+.step__num {
+  font-family: var(--display);
+  font-size: 56px;
+  font-weight: 350;
+  font-style: italic;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 32px;
+}
+.step__title {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+.step__desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--fg-2);
+}
+
+@media (max-width: 880px) {
+  .process__steps { grid-template-columns: 1fr 1fr; }
+  .step { padding: 28px 22px; }
+  .step:nth-child(2) { border-right: none; }
+  .step:nth-child(1), .step:nth-child(2) { border-bottom: 1px solid var(--line); }
+}
+@media (max-width: 560px) {
+  .process__steps { grid-template-columns: 1fr; }
+  .step { border-right: none; border-bottom: 1px solid var(--line); }
+  .step:last-child { border-bottom: none; }
+}
+
+.stack {
+  border-top: 1px solid var(--line);
+}
+.stack__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.tool {
+  padding: 28px 18px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+  transition: background .25s ease, transform .25s ease;
+  position: relative;
+}
+.tool:hover {
+  background: var(--bg-card);
+}
+.tool::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s ease;
+}
+.tool:hover::after { transform: scaleX(1); }
+
+.tool__icon {
+  width: 36px; height: 36px;
+  margin: 0 auto 14px;
+  color: var(--fg-2);
+  transition: color .25s ease;
+}
+.tool:hover .tool__icon { color: var(--accent); }
+
+.tool__name {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+@media (max-width: 880px) {
+  .stack__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 560px) {
+  .stack__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.experience {
+  border-top: 1px solid var(--line);
+  background: var(--bg-elev);
+}
+.exp__list {
+  border-top: 1px solid var(--line);
+}
+.exp {
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr 60px;
+  gap: 40px;
+  align-items: start;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--line);
+  cursor: default;
+  transition: padding .3s ease;
+  position: relative;
+}
+.exp:hover { padding-left: 16px; }
+.exp::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0;
+  width: 4px; height: 100%;
+  background: var(--accent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform .3s ease;
+}
+.exp:hover::before { transform: scaleY(1); }
+
+.exp__date {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--fg-mute);
+  padding-top: 8px;
+}
+.exp__company {
+  font-family: var(--display);
+  font-size: clamp(22px, 2.3vw, 30px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.exp__role {
+  color: var(--fg-2);
+  font-size: 15px;
+  line-height: 1.5;
+  padding-top: 6px;
+}
+.exp__arrow {
+  font-family: var(--display);
+  font-size: 28px;
+  color: var(--fg-mute);
+  font-style: italic;
+  text-align: right;
+  transition: color .25s ease, transform .25s ease;
+}
+.exp:hover .exp__arrow {
+  color: var(--accent);
+  transform: translateX(-4px);
+}
+
+@media (max-width: 880px) {
+  .exp { grid-template-columns: 1fr; gap: 8px; padding: 24px 0; }
+  .exp:hover { padding-left: 0; }
+  .exp__date { padding-top: 0; order: -1; }
+  .exp__arrow { display: none; }
+}
+
+.quote {
+  border-top: 1px solid var(--line);
+  padding: 160px 36px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.quote::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(at 20% 30%, rgba(216, 255, 58, 0.08) 0%, transparent 50%),
+    radial-gradient(at 80% 70%, rgba(255, 90, 44, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+.quote__text {
+  position: relative;
+  font-family: var(--display);
+  font-weight: 350;
+  font-size: clamp(36px, 5.5vw, 84px);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  max-width: 1100px;
+  margin: 0 auto;
+  font-variation-settings: "opsz" 144;
+}
+.quote__text em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent);
+}
+.quote__attr {
+  margin-top: 50px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-mute);
+  position: relative;
+}
+@media (max-width: 880px) {
+  .quote { padding: 90px 20px; }
+}
+
+.contact {
+  border-top: 1px solid var(--line);
+  padding: 140px 36px;
+  background: var(--bg-elev);
+  position: relative;
+  overflow: hidden;
+}
+.contact__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.contact__title {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(56px, 12vw, 220px);
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  margin-bottom: 60px;
+  font-variation-settings: "opsz" 144;
+}
+.contact__title em {
+  font-style: italic;
+  font-weight: 350;
+  color: var(--accent);
+  display: block;
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: end;
+}
+.contact__lead {
+  font-family: var(--display);
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1.3;
+  font-weight: 400;
+  color: var(--fg-2);
+  max-width: 600px;
+}
+
+.contact__channels {
+  display: flex; flex-direction: column;
+  gap: 4px;
+}
+.channel {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+  transition: padding .25s ease;
+  position: relative;
+}
+.channel:first-child { border-top: 1px solid var(--line); }
+.channel:hover { padding-left: 12px; }
+.channel__label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-mute);
+}
+.channel__value {
+  font-family: var(--display);
+  font-size: clamp(16px, 1.5vw, 22px);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  transition: color .25s ease;
+}
+.channel:hover .channel__value { color: var(--accent); }
+
+@media (max-width: 880px) {
+  .contact { padding: 90px 20px; }
+  .contact__grid { grid-template-columns: 1fr; gap: 50px; }
+}
+
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 36px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 16px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-mute);
+}
+.footer__time { color: var(--fg-2); }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .8s cubic-bezier(.2,0,.2,1), transform .8s cubic-bezier(.2,0,.2,1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal--delay-1 { transition-delay: .1s; }
+.reveal--delay-2 { transition-delay: .2s; }
+.reveal--delay-3 { transition-delay: .3s; }
+.reveal--delay-4 { transition-delay: .4s; }
+
+.hero__title .line-1,
+.hero__title .line-2,
+.hero__title .line-3 {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: heroIn 1s cubic-bezier(.2,0,.2,1) forwards;
+}
+.hero__title .line-1 { animation-delay: 0.2s; }
+.hero__title .line-2 { animation-delay: 0.4s; }
+.hero__title .line-3 { animation-delay: 0.6s; }
+
+@keyframes heroIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero__kicker {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 0.1s;
+}
+.hero__bottom {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 0.9s;
+}
+@keyframes fadeIn { to { opacity: 1; } }
+
+.icon {
+  width: 1em; height: 1em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="#top" class="nav__logo">
+    <span class="dot"></span>
+    Vincent.K
+  </a>
+  <div class="nav__links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="#stack">Stack</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="nav__cta">
+    Start a project
+    <svg class="icon" viewBox="0 0 24 24" width="14" height="14"><path d="M7 17l10-10M7 7h10v10"/></svg>
+  </a>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero__inner">
+    <div class="hero__kicker">
+      <span class="line"></span>
+      <span>Digital Marketing × Web Development</span>
+      <span>Based in the Philippines, working globally</span>
+      <span class="available">Available for new projects</span>
+    </div>
+
+    <h1 class="hero__title">
+      <span class="line-1">Code that</span>
+      <span class="line-2">converts &amp; campaigns</span>
+      <span class="line-3">that <span class="accent">compound.</span></span>
+    </h1>
+  </div>
+
+  <div class="hero__bottom">
+    <p class="hero__sub">
+      I'm <em>Vincent Kleigh Manili</em> — half developer, half marketer. Five years building the systems that turn ad spend into revenue: Google &amp; Meta ads, GoHighLevel funnels, Zapier automations, and custom-coded websites — all under one operator.
+    </p>
+    <div class="hero__actions">
+      <a href="#work" class="btn-primary">
+        View my work
+        <svg class="icon" viewBox="0 0 24 24" width="14" height="14"><path d="M7 17l10-10M7 7h10v10"/></svg>
+      </a>
+      <a href="#contact" class="btn-ghost">
+        Get in touch
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span class="marquee__item">Google Ads <svg class="star icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.5 4.5l15 15M19.5 4.5l-15 15"/></svg></span>
+    <span class="marquee__item">GoHighLevel <svg class="star icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.5 4.5l15 15M19.5 4.5l-15 15"/></svg></span>
+    <span class="marquee__item">Funnel Building <svg class="star icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.5 4.5l15 15M19.5 4.5l-15 15"/></svg></span>
+    <span class="marquee__item">Web Development <svg class="star icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.5 4.5l15 15M19.5 4.5l-15 15"/></svg></span>
+    <span class="marquee__item">Meta Ads <svg class="star icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.5 4.5l15 15M19.5 4.5l-15 15"/></svg></span>
+    <span class="marquee__item">Zapier Automation <svg class="star icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.5 4.5l15 15M19.5 4.5l-15 15"/></svg></span>
+    <span class="marquee__item">SEO <svg class="star icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.5 4.5l15 15M19.5 4.5l-15 15"/></svg></span>
+    <span class="marquee__item">Lead Generation <svg class="star icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.5 4.5l15 15M19.5 4.5l-15 15"/></svg></span>
+    
+    <span class="marquee__item">Google Ads <svg class="star icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.5 4.5l15 15M19.5 4.5l-15 15"/></svg></span>
+    <span class="marquee__item">GoHighLevel <svg class="star icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.5 4.5l15 15M19.5 4.5l-15 15"/></svg></span>
+    <span class="marquee__item">Funnel Building <svg class="star icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.5 4.5l15 15M19.5 4.5l-15 15"/></svg></span>
+    <span class="marquee__item">Web Development <svg class="star icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.5 4.5l15 15M19.5 4.5l-15 15"/></svg></span>
+    <span class="marquee__item">Meta Ads <svg class="star icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.5 4.5l15 15M19.5 4.5l-15 15"/></svg></span>
+    <span class="marquee__item">Zapier Automation <svg class="star icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.5 4.5l15 15M19.5 4.5l-15 15"/></svg></span>
+    <span class="marquee__item">SEO <svg class="star icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.5 4.5l15 15M19.5 4.5l-15 15"/></svg></span>
+    <span class="marquee__item">Lead Generation <svg class="star icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.5 4.5l15 15M19.5 4.5l-15 15"/></svg></span>
+  </div>
+</div>
+
+<section class="section about" id="about">
+  <div class="section__inner">
+    <div class="section__label reveal"><span class="num">01</span> &nbsp;/&nbsp; About</div>
+
+    <div class="about__grid">
+      <div class="about__lead reveal">
+        Most agencies hand the marketer's plan to a developer who doesn't quite get it — and lose <em>two weeks and 30% of the brief</em> in the handoff.
+      </div>
+
+      <div class="about__body reveal reveal--delay-1">
+        <p>I do both jobs. I plan the funnel, write the copy, build the site, run the ads, and wire up the automations that connect them. <strong>The marketer who built the system understands its capabilities.</strong> Nothing gets lost in translation because there is no translation.</p>
+
+        <p>Since 2020, I've worked with U.S.-based agencies and direct clients across automotive, construction, training, and SaaS — building everything from $50/day Google Ads campaigns that print leads to full GoHighLevel sub-account architectures with dozens of automations firing in the background.</p>
+
+        <p>I'm currently a Computer Science senior at Caraga State University. I graduated high school with honors. I work remotely from Carmen, Agusan del Norte, and I'm fluent in English.</p>
+      </div>
+    </div>
+
+    <div class="about__stats">
+      <div class="stat reveal">
+        <div class="stat__num">5<span class="plus">+</span></div>
+        <div class="stat__label">Years building lead-gen systems</div>
+      </div>
+      <div class="stat reveal reveal--delay-1">
+        <div class="stat__num">7</div>
+        <div class="stat__label">Companies served since 2020</div>
+      </div>
+      <div class="stat reveal reveal--delay-2">
+        <div class="stat__num">15<span class="plus">+</span></div>
+        <div class="stat__label">Live sites &amp; funnels shipped</div>
+      </div>
+      <div class="stat reveal reveal--delay-3">
+        <div class="stat__num">15</div>
+        <div class="stat__label">Tools &amp; platforms in active rotation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section services" id="services">
+  <div class="section__inner">
+    <div class="section__label reveal"><span class="num">02</span> &nbsp;/&nbsp; What I do</div>
+    <h2 class="section__title reveal">
+      Four practices,<br/>
+      <em>one operator.</em>
+    </h2>
+
+    <div class="services__grid">
+      <div class="service reveal">
+        <div class="service__num">— 01</div>
+        <h3 class="service__title">Paid <em>media</em> &amp; lead gen</h3>
+        <p class="service__desc">Google Ads and Meta Ads built around the math of your offer — not vanity metrics. Campaign architecture, conversion tracking, retargeting, and the daily babysitting that keeps CPL trending down.</p>
+        <ul class="service__list">
+          <li>Google Ads</li>
+          <li>Meta Ads</li>
+          <li>Tracking</li>
+          <li>Retargeting</li>
+          <li>Lead Quality QA</li>
+        </ul>
+      </div>
+
+      <div class="service reveal reveal--delay-1">
+        <div class="service__num">— 02</div>
+        <h3 class="service__title">Funnels &amp; <em>landing pages</em></h3>
+        <p class="service__desc">Conversion-focused landing pages and full funnels built in GoHighLevel, WordPress, or hand-coded. From scroll-stopping hero to thank-you page, every section earns its rent.</p>
+        <ul class="service__list">
+          <li>GoHighLevel</li>
+          <li>WordPress</li>
+          <li>Divi / Elementor</li>
+          <li>HTML / CSS / JS</li>
+          <li>A/B Testing</li>
+        </ul>
+      </div>
+
+      <div class="service reveal reveal--delay-2">
+        <div class="service__num">— 03</div>
+        <h3 class="service__title">Automation &amp; <em>integrations</em></h3>
+        <p class="service__desc">Zapier flows, GoHighLevel workflows, pipeline architecture, and AI agents (Synthflow, Closebot) wired into your CRM. The boring middleware that quietly saves your team 20 hours a week.</p>
+        <ul class="service__list">
+          <li>Zapier</li>
+          <li>GHL Workflows</li>
+          <li>Pipelines</li>
+          <li>Synthflow AI</li>
+          <li>Closebot</li>
+        </ul>
+      </div>
+
+      <div class="service reveal reveal--delay-3">
+        <div class="service__num">— 04</div>
+        <h3 class="service__title">Web design &amp; <em>brand</em></h3>
+        <p class="service__desc">Marketing-led design that loads fast, ranks, and reads like a salesperson on their best day. Plus social-ready graphics, brochures, and flyers built in Canva, Photoshop, and Figma when the brief calls for it.</p>
+        <ul class="service__list">
+          <li>Web Design</li>
+          <li>SEO</li>
+          <li>Social Graphics</li>
+          <li>Canva / PS</li>
+          <li>Brand Systems</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section work" id="work">
+  <div class="section__inner">
+    <div class="section__label reveal"><span class="num">03</span> &nbsp;/&nbsp; Selected work</div>
+    <h2 class="section__title reveal">
+      Live in the wild,<br/>
+      <em>shipping leads.</em>
+    </h2>
+
+    <div class="work__filters reveal" id="filters">
+      <button class="filter active" data-filter="all">All work</button>
+      <button class="filter" data-filter="ads">Google Ads</button>
+      <button class="filter" data-filter="funnel">Funnels &amp; Landing</button>
+      <button class="filter" data-filter="site">Websites</button>
+    </div>
+
+    <div class="projects" id="projects">
+
+      <a class="project project--lg reveal" href="https://www.qualifiedautomotiveinc.com/" target="_blank" rel="noopener" data-cat="ads site">
+        <div class="project__media">
+          <div class="project__fallback">Qualified <em>Automotive</em></div>
+          <div class="project__overlay"></div>
+          <div class="project__meta">
+            <span class="project__tag project__tag--accent">Google Ads</span>
+            <span class="project__tag">Automotive</span>
+          </div>
+        </div>
+        <div class="project__info">
+          <div>
+            <h3 class="project__title">Qualified Automotive Inc.</h3>
+            <div class="project__url">qualifiedautomotiveinc.com</div>
+          </div>
+          <div class="project__arrow">
+            <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="M7 17l10-10M7 7h10v10"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="project project--md reveal reveal--delay-1" href="https://www.genesisautomotivecenter.com/" target="_blank" rel="noopener" data-cat="ads site">
+        <div class="project__media">
+          <div class="project__fallback">Genesis <em>Automotive</em></div>
+          <div class="project__overlay"></div>
+          <div class="project__meta">
+            <span class="project__tag project__tag--accent">Google Ads</span>
+            <span class="project__tag">Auto Service</span>
+          </div>
+        </div>
+        <div class="project__info">
+          <div>
+            <h3 class="project__title">Genesis Automotive Center</h3>
+            <div class="project__url">genesisautomotivecenter.com</div>
+          </div>
+          <div class="project__arrow">
+            <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="M7 17l10-10M7 7h10v10"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="project project--md reveal" href="https://www.coastalpdrtraining.com/" target="_blank" rel="noopener" data-cat="ads site">
+        <div class="project__media">
+          <div class="project__fallback">Coastal <em>PDR Training</em></div>
+          <div class="project__overlay"></div>
+          <div class="project__meta">
+            <span class="project__tag project__tag--accent">Google Ads</span>
+            <span class="project__tag">Training</span>
+          </div>
+        </div>
+        <div class="project__info">
+          <div>
+            <h3 class="project__title">Coastal PDR Training</h3>
+            <div class="project__url">coastalpdrtraining.com</div>
+          </div>
+          <div class="project__arrow">
+            <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="M7 17l10-10M7 7h10v10"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="project project--lg reveal reveal--delay-1" href="https://theexaltedmedia.com" target="_blank" rel="noopener" data-cat="site">
+        <div class="project__media">
+          <div class="project__fallback">The Exalted <em>Media</em></div>
+          <div class="project__overlay"></div>
+          <div class="project__meta">
+            <span class="project__tag project__tag--accent">Website</span>
+            <span class="project__tag">Agency</span>
+          </div>
+        </div>
+        <div class="project__info">
+          <div>
+            <h3 class="project__title">The Exalted Media</h3>
+            <div class="project__url">theexaltedmedia.com</div>
+          </div>
+          <div class="project__arrow">
+            <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="M7 17l10-10M7 7h10v10"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="project project--sm reveal" href="https://gentlemenbychoice.org/" target="_blank" rel="noopener" data-cat="site">
+        <div class="project__media">
+          <div class="project__fallback">Gentlemen <em>by Choice</em></div>
+          <div class="project__overlay"></div>
+          <div class="project__meta">
+            <span class="project__tag project__tag--accent">Website</span>
+            <span class="project__tag">Non-profit</span>
+          </div>
+        </div>
+        <div class="project__info">
+          <div>
+            <h3 class="project__title">Gentlemen by Choice</h3>
+            <div class="project__url">gentlemenbychoice.org</div>
+          </div>
+          <div class="project__arrow">
+            <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="M7 17l10-10M7 7h10v10"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="project project--sm reveal reveal--delay-1" href="https://ladiesbychoice.org/" target="_blank" rel="noopener" data-cat="site">
+        <div class="project__media">
+          <div class="project__fallback">Ladies <em>by Choice</em></div>
+          <div class="project__overlay"></div>
+          <div class="project__meta">
+            <span class="project__tag project__tag--accent">Website</span>
+            <span class="project__tag">Non-profit</span>
+          </div>
+        </div>
+        <div class="project__info">
+          <div>
+            <h3 class="project__title">Ladies by Choice</h3>
+            <div class="project__url">ladiesbychoice.org</div>
+          </div>
+          <div class="project__arrow">
+            <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="M7 17l10-10M7 7h10v10"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="project project--sm reveal reveal--delay-2" href="https://bergen-county-new-jersey-construction.com" target="_blank" rel="noopener" data-cat="site">
+        <div class="project__media">
+          <div class="project__fallback">Bergen County <em>Construction</em></div>
+          <div class="project__overlay"></div>
+          <div class="project__meta">
+            <span class="project__tag project__tag--accent">Website</span>
+            <span class="project__tag">Construction</span>
+          </div>
+        </div>
+        <div class="project__info">
+          <div>
+            <h3 class="project__title">Bergen County NJ Construction</h3>
+            <div class="project__url">bergen-county-new-jersey-construction.com</div>
+          </div>
+          <div class="project__arrow">
+            <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="M7 17l10-10M7 7h10v10"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="project project--md reveal" href="https://freeleads.prospectboss.com/home" target="_blank" rel="noopener" data-cat="funnel">
+        <div class="project__media">
+          <div class="project__fallback">ProspectBoss <em>Free Leads</em></div>
+          <div class="project__overlay"></div>
+          <div class="project__meta">
+            <span class="project__tag project__tag--accent">GHL Funnel</span>
+            <span class="project__tag">SaaS</span>
+          </div>
+        </div>
+        <div class="project__info">
+          <div>
+            <h3 class="project__title">ProspectBoss — Free Leads Hub</h3>
+            <div class="project__url">freeleads.prospectboss.com</div>
+          </div>
+          <div class="project__arrow">
+            <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="M7 17l10-10M7 7h10v10"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="project project--md reveal reveal--delay-1" href="https://freeleads.prospectboss.com/10-10-day-trial" target="_blank" rel="noopener" data-cat="funnel">
+        <div class="project__media">
+          <div class="project__fallback">10-Day <em>Trial</em></div>
+          <div class="project__overlay"></div>
+          <div class="project__meta">
+            <span class="project__tag project__tag--accent">Landing Page</span>
+            <span class="project__tag">Trial Funnel</span>
+          </div>
+        </div>
+        <div class="project__info">
+          <div>
+            <h3 class="project__title">ProspectBoss — 10-Day Trial</h3>
+            <div class="project__url">freeleads.prospectboss.com/10-10-day-trial</div>
+          </div>
+          <div class="project__arrow">
+            <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="M7 17l10-10M7 7h10v10"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="project project--sm reveal" href="https://freeleads.prospectboss.com/how-ai-works" target="_blank" rel="noopener" data-cat="funnel">
+        <div class="project__media">
+          <div class="project__fallback">How <em>AI Works</em></div>
+          <div class="project__overlay"></div>
+          <div class="project__meta">
+            <span class="project__tag project__tag--accent">Landing Page</span>
+            <span class="project__tag">SaaS</span>
+          </div>
+        </div>
+        <div class="project__info">
+          <div>
+            <h3 class="project__title">How AI Works — ProspectBoss</h3>
+            <div class="project__url">freeleads.prospectboss.com/how-ai-works</div>
+          </div>
+          <div class="project__arrow">
+            <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="M7 17l10-10M7 7h10v10"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="project project--sm reveal reveal--delay-1" href="https://freeleads.prospectboss.com/prospectboss-retargeting-reel" target="_blank" rel="noopener" data-cat="funnel">
+        <div class="project__media">
+          <div class="project__fallback">Retargeting <em>Reel</em></div>
+          <div class="project__overlay"></div>
+          <div class="project__meta">
+            <span class="project__tag project__tag--accent">Landing Page</span>
+            <span class="project__tag">Retargeting</span>
+          </div>
+        </div>
+        <div class="project__info">
+          <div>
+            <h3 class="project__title">PB Retargeting Reel</h3>
+            <div class="project__url">freeleads.prospectboss.com/prospectboss-retargeting-reel</div>
+          </div>
+          <div class="project__arrow">
+            <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="M7 17l10-10M7 7h10v10"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="project project--sm reveal reveal--delay-2" href="https://cold2sold.live/" target="_blank" rel="noopener" data-cat="funnel">
+        <div class="project__media">
+          <div class="project__fallback">Cold <em>2 Sold</em></div>
+          <div class="project__overlay"></div>
+          <div class="project__meta">
+            <span class="project__tag project__tag--accent">Landing Page</span>
+            <span class="project__tag">Sales</span>
+          </div>
+        </div>
+        <div class="project__info">
+          <div>
+            <h3 class="project__title">Cold2Sold</h3>
+            <div class="project__url">cold2sold.live</div>
+          </div>
+          <div class="project__arrow">
+            <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="M7 17l10-10M7 7h10v10"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="project project--md reveal" href="https://www.coastalpdrtraining.com/get-paintless-dent-repair-training" target="_blank" rel="noopener" data-cat="funnel">
+        <div class="project__media">
+          <div class="project__fallback">PDR Training <em>Funnel</em></div>
+          <div class="project__overlay"></div>
+          <div class="project__meta">
+            <span class="project__tag project__tag--accent">Landing Page</span>
+            <span class="project__tag">Training</span>
+          </div>
+        </div>
+        <div class="project__info">
+          <div>
+            <h3 class="project__title">Get PDR Training</h3>
+            <div class="project__url">coastalpdrtraining.com/get-paintless-dent-repair-training</div>
+          </div>
+          <div class="project__arrow">
+            <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="M7 17l10-10M7 7h10v10"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="project project--md reveal reveal--delay-1" href="https://fb.bergen-county-new-jersey-construction.com/" target="_blank" rel="noopener" data-cat="funnel">
+        <div class="project__media">
+          <div class="project__fallback">FB Lead Gen <em>Funnel</em></div>
+          <div class="project__overlay"></div>
+          <div class="project__meta">
+            <span class="project__tag project__tag--accent">Landing Page</span>
+            <span class="project__tag">FB Ads</span>
+          </div>
+        </div>
+        <div class="project__info">
+          <div>
+            <h3 class="project__title">Bergen Construction — FB Funnel</h3>
+            <div class="project__url">fb.bergen-county-new-jersey-construction.com</div>
+          </div>
+          <div class="project__arrow">
+            <svg class="icon" viewBox="0 0 24 24" width="16" height="16"><path d="M7 17l10-10M7 7h10v10"/></svg>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="section process">
+  <div class="section__inner">
+    <div class="section__label reveal"><span class="num">04</span> &nbsp;/&nbsp; How I work</div>
+    <h2 class="section__title reveal">
+      A short loop,<br/>
+      <em>tightly run.</em>
+    </h2>
+
+    <div class="process__steps">
+      <div class="step reveal">
+        <div class="step__num">i</div>
+        <h3 class="step__title">Discover</h3>
+        <p class="step__desc">A 30-minute call to understand the offer, the customer, and the math. No template intake forms.</p>
+      </div>
+      <div class="step reveal reveal--delay-1">
+        <div class="step__num">ii</div>
+        <h3 class="step__title">Map</h3>
+        <p class="step__desc">I sketch the funnel, the automations, and the ad architecture before a single asset gets made.</p>
+      </div>
+      <div class="step reveal reveal--delay-2">
+        <div class="step__num">iii</div>
+        <h3 class="step__title">Ship</h3>
+        <p class="step__desc">I build it end-to-end — pages, pipelines, copy, ads, integrations — usually in days, not weeks.</p>
+      </div>
+      <div class="step reveal reveal--delay-3">
+        <div class="step__num">iv</div>
+        <h3 class="step__title">Iterate</h3>
+        <p class="step__desc">Numbers come in. We cut what's not working, double down on what is. Weekly, not quarterly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section stack" id="stack">
+  <div class="section__inner">
+    <div class="section__label reveal"><span class="num">05</span> &nbsp;/&nbsp; Tooling</div>
+    <h2 class="section__title reveal">
+      The kit I <em>actually</em> use<br/>
+      every working day.
+    </h2>
+
+    <div class="stack__grid">
+      <div class="tool reveal">
+        <svg class="tool__icon icon" viewBox="0 0 24 24"><path d="M3 5h18M3 12h18M3 19h18"/></svg>
+        <div class="tool__name">GoHighLevel</div>
+      </div>
+      <div class="tool reveal">
+        <svg class="tool__icon icon" viewBox="0 0 24 24"><path d="M4 4h16v6H4zM4 14h16v6H4z"/></svg>
+        <div class="tool__name">Google Ads</div>
+      </div>
+      <div class="tool reveal">
+        <svg class="tool__icon icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18"/></svg>
+        <div class="tool__name">Meta Ads</div>
+      </div>
+      <div class="tool reveal">
+        <svg class="tool__icon icon" viewBox="0 0 24 24"><path d="M12 2v8M12 14v8M2 12h8M14 12h8"/></svg>
+        <div class="tool__name">Zapier</div>
+      </div>
+      <div class="tool reveal">
+        <svg class="tool__icon icon" viewBox="0 0 24 24"><path d="M8 4h8v4H8zM4 12h16v8H4z"/></svg>
+        <div class="tool__name">WordPress</div>
+      </div>
+
+      <div class="tool reveal">
+        <svg class="tool__icon icon" viewBox="0 0 24 24"><path d="M5 7l7-5 7 5v10l-7 5-7-5z"/><path d="M12 12l7-5M12 12v10M12 12L5 7"/></svg>
+        <div class="tool__name">Divi</div>
+      </div>
+      <div class="tool reveal">
+        <svg class="tool__icon icon" viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/><path d="M7 7h10v4H7zM7 13h10v4H7z"/></svg>
+        <div class="tool__name">Elementor</div>
+      </div>
+      <div class="tool reveal">
+        <svg class="tool__icon icon" viewBox="0 0 24 24"><path d="M4 4l8 8-8 8M12 20h8"/></svg>
+        <div class="tool__name">VS Code</div>
+      </div>
+      <div class="tool reveal">
+        <svg class="tool__icon icon" viewBox="0 0 24 24"><path d="M3 8h18l-2 13H5z"/><path d="M3 8l3-5h12l3 5"/></svg>
+        <div class="tool__name">HTML / CSS / JS</div>
+      </div>
+      <div class="tool reveal">
+        <svg class="tool__icon icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9c0-2 6-2 6 0s-6 0-6 3 6 3 6 0"/></svg>
+        <div class="tool__name">Synthflow AI</div>
+      </div>
+
+      <div class="tool reveal">
+        <svg class="tool__icon icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12l3 3 5-6"/></svg>
+        <div class="tool__name">Closebot</div>
+      </div>
+      <div class="tool reveal">
+        <svg class="tool__icon icon" viewBox="0 0 24 24"><path d="M4 20l8-16 8 16M8 14h8"/></svg>
+        <div class="tool__name">Canva</div>
+      </div>
+      <div class="tool reveal">
+        <svg class="tool__icon icon" viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/><path d="M7 17V7h4a3 3 0 0 1 0 6H7"/></svg>
+        <div class="tool__name">Photoshop</div>
+      </div>
+      <div class="tool reveal">
+        <svg class="tool__icon icon" viewBox="0 0 24 24"><path d="M2 16l4-12 4 12M14 16l4-12 4 12M3 12h6M15 12h6"/></svg>
+        <div class="tool__name">CapCut</div>
+      </div>
+      <div class="tool reveal">
+        <svg class="tool__icon icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+        <div class="tool__name">Google Workspace</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section experience">
+  <div class="section__inner">
+    <div class="section__label reveal"><span class="num">06</span> &nbsp;/&nbsp; Experience</div>
+    <h2 class="section__title reveal">
+      Five years,<br/>
+      <em>seven teams.</em>
+    </h2>
+
+    <div class="exp__list">
+      <div class="exp reveal">
+        <div class="exp__date">Dec 2025 — Now</div>
+        <div class="exp__company">Call4Peace</div>
+        <div class="exp__role">Automation &amp; Web Developer — Workflow setup for seamless processes, web design and development.</div>
+        <div class="exp__arrow">↗</div>
+      </div>
+      <div class="exp reveal">
+        <div class="exp__date">Dec 2025 — Now</div>
+        <div class="exp__company">Gloryyfunding</div>
+        <div class="exp__role">Automation &amp; Frontend Developer — Backend automation, frontend &amp; light backend dev.</div>
+        <div class="exp__arrow">↗</div>
+      </div>
+      <div class="exp reveal">
+        <div class="exp__date">2024 — Now</div>
+        <div class="exp__company">VROSS Corporation</div>
+        <div class="exp__role">IT / Encoder — System inventory, data analysis, hardware troubleshooting.</div>
+        <div class="exp__arrow">↗</div>
+      </div>
+      <div class="exp reveal">
+        <div class="exp__date">Sep — Oct 2024</div>
+        <div class="exp__company">JM Pro Consulting LLC</div>
+        <div class="exp__role">Google Ads Specialist — Campaign setup &amp; management across GoHighLevel sub-accounts.</div>
+        <div class="exp__arrow">↗</div>
+      </div>
+      <div class="exp reveal">
+        <div class="exp__date">Aug — Sep 2024</div>
+        <div class="exp__company">Daniels Media Group LLC</div>
+        <div class="exp__role">Automations Specialist &amp; GHL Integrations — Zapier, workflows, pipelines.</div>
+        <div class="exp__arrow">↗</div>
+      </div>
+      <div class="exp reveal">
+        <div class="exp__date">May — Oct 2024</div>
+        <div class="exp__company">ProspectBoss</div>
+        <div class="exp__role">Digital Marketing Manager — Oversaw web design, automation, social media, Meta ads lead gen.</div>
+        <div class="exp__arrow">↗</div>
+      </div>
+      <div class="exp reveal">
+        <div class="exp__date">Apr 2020 — Oct 2024</div>
+        <div class="exp__company">The Exalted Media</div>
+        <div class="exp__role">Automations Specialist, Funnel &amp; Website Builder — GHL, Zapier, SEO, market research, admin.</div>
+        <div class="exp__arrow">↗</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="quote__text reveal">
+    A pretty website that doesn't convert is just <em>expensive art.</em> I build the other kind.
+  </div>
+  <div class="quote__attr reveal reveal--delay-1">— Vincent's working principle</div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact__inner">
+    <h2 class="contact__title reveal">
+      Got an offer<br/>
+      that needs <em>a system?</em>
+    </h2>
+
+    <div class="contact__grid">
+      <p class="contact__lead reveal">
+        Tell me about your business, your numbers, and what's broken. I'll tell you whether I'm the right fit and what I'd do first. No 14-step intake form, no nine-tab proposal — just an honest conversation about what would actually move the needle.
+      </p>
+
+      <div class="contact__channels reveal reveal--delay-1">
+        <a class="channel" href="mailto:manilivincentkleigh@gmail.com">
+          <span class="channel__label">Email</span>
+          <span class="channel__value">manilivincentkleigh@gmail.com</span>
+        </a>
+        <a class="channel" href="tel:+639083516323">
+          <span class="channel__label">Phone / WhatsApp</span>
+          <span class="channel__value">+63 908 351 6323</span>
+        </a>
+        <a class="channel" href="https://vincentkleighmanili.netlify.app" target="_blank" rel="noopener">
+          <span class="channel__label">Old Site</span>
+          <span class="channel__value">vincentkleighmanili.netlify.app</span>
+        </a>
+        <div class="channel">
+          <span class="channel__label">Based in</span>
+          <span class="channel__value">Carmen, AdN, Philippines</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div>© 2026 Vincent Kleigh Manili. Built by hand.</div>
+  <div class="footer__time" id="local-time">Local time —</div>
+  <div>Last updated <span id="last-updated">Apr 2026</span></div>
+</footer>
+
+<script>
+
+const nav = document.getElementById('nav');
+let lastY = 0;
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  nav.classList.toggle('scrolled', y > 40);
+  lastY = y;
+});
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+const filters = document.querySelectorAll('.filter');
+const projects = document.querySelectorAll('.project');
+filters.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filters.forEach(f => f.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.filter;
+    projects.forEach(p => {
+      const cats = (p.dataset.cat || '').split(' ');
+      if (cat === 'all' || cats.includes(cat)) {
+        p.classList.remove('hidden');
+      } else {
+        p.classList.add('hidden');
+      }
+    });
+  });
+});
+
+function updateTime() {
+  const now = new Date();
+  const opts = { timeZone: 'Asia/Manila', hour: '2-digit', minute: '2-digit', hour12: false };
+  const t = now.toLocaleTimeString('en-US', opts);
+  const el = document.getElementById('local-time');
+  if (el) el.textContent = `Local time — ${t} Manila`;
+}
+updateTime();
+setInterval(updateTime, 30000);
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const id = a.getAttribute('href');
+    if (id.length > 1) {
+      const target = document.querySelector(id);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  });
+});
+</script>
+
+</body>
+</html>
